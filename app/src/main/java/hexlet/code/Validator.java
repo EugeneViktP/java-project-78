@@ -2,8 +2,6 @@ package hexlet.code;
 
 import hexlet.code.schemas.StringSchema;
 
-import java.util.Objects;
-
 public class Validator {
     public Validator() {
     }
