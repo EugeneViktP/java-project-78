@@ -5,7 +5,11 @@ public class App {
         System.out.println("Hello World!");
         var v = new Validator();
         var schema = v.string();
-        System.out.println(schema.isValid(null));
+        System.out.println(schema.isValid(""));
+        schema.required();
+        System.out.println(schema.isValid(""));
+//        System.out.println(schema.isValid(null));
+
 
 
     }
