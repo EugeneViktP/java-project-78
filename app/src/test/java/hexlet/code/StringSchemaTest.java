@@ -14,6 +14,7 @@ public class StringSchemaTest {
         StringSchema schema = v.string();
         assertTrue(schema.isValid(null));
         assertTrue(schema.isValid(""));
+//        assertFalse(schema.isValid(7));
         schema.required();
         assertFalse(schema.isValid(null));
         assertFalse(schema.isValid(""));
