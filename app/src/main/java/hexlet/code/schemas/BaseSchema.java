@@ -6,7 +6,7 @@ import java.util.LinkedHashMap;
 import java.util.function.Predicate;
 
 abstract class BaseSchema<T> {
-    private Map<String, Predicate<T>> attributes = new LinkedHashMap<>();
+    private final Map<String, Predicate<T>> attributes = new LinkedHashMap<>();
 
     public boolean isValid(T obj) {
         Collection<Predicate<T>> data = attributes.values();
