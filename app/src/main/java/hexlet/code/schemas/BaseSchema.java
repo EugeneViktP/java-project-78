@@ -7,10 +7,9 @@ import java.util.function.Predicate;
 
 abstract class BaseSchema<T> {
     private final Map<String, Predicate<T>> attributes = new LinkedHashMap<>();
-
     public boolean isValid(T obj) {
         Collection<Predicate<T>> data = attributes.values();
-        if (obj == null && data.isEmpty()) {
+        if (obj == null && !attributes.containsKey("required")) {
             return true;
         } else if (obj == null) {
             return false;

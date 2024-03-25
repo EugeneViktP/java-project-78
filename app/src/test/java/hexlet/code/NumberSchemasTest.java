@@ -25,10 +25,10 @@ public class NumberSchemasTest {
         assertTrue(schema.isValid(9));
         assertFalse(schema.isValid(10));
     }
-//    @Test
-//    public void test2() {
-//        Validator v = new Validator();
-//        NumberSchema schema1 = v.number();
-//        assertTrue(schema1.positive().isValid(null));
-//    }
+    @Test
+    public void test2() {
+        Validator v = new Validator();
+        NumberSchema schema1 = v.number();
+        assertTrue(schema1.positive().isValid(null));
+    }
 }
