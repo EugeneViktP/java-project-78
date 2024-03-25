@@ -9,7 +9,6 @@ abstract class BaseSchema<T> {
     private Map<String, Predicate<T>> attributes = new LinkedHashMap<>();
 
     public boolean isValid(T obj) {
-//        System.out.println(attributes.size());
         Collection<Predicate<T>> data = attributes.values();
         if (obj == null && data.isEmpty()) {
             return true;
@@ -18,7 +17,8 @@ abstract class BaseSchema<T> {
         }
         return data.stream().allMatch(x -> x.test(obj));
     }
-    public void addCriteria(String name, Predicate<T> creterion) {
-        attributes.put(name, creterion);
+    public void addCriteria(String name, Predicate<T> criterion) {
+
+        attributes.put(name, criterion);
     }
 }
