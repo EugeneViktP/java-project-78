@@ -1,11 +1,9 @@
 package hexlet.code;
 
-
 import hexlet.code.schemas.StringSchema;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
-
 
 public class StringSchemaTest {
     @Test
@@ -24,7 +22,6 @@ public class StringSchemaTest {
         schema.contains("Mo");
         assertTrue(schema.isValid("Mother"));
         assertFalse(schema.isValid("Cat"));
-
     }
     @Test
     public void test2() {
