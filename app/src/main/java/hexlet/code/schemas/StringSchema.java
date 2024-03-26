@@ -5,7 +5,7 @@ public final class StringSchema extends BaseSchema<String> {
         addCriteria("required", x -> !x.isEmpty());
         return this;
     }
-    public StringSchema minlength(int minLength) {
+    public StringSchema minLength(int minLength) {
         addCriteria("minLength", x -> x.length() > minLength);
         return this;
     }

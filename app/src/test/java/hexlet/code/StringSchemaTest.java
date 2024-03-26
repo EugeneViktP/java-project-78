@@ -15,7 +15,7 @@ public class StringSchemaTest {
         schema.required();
         assertFalse(schema.isValid(null));
         assertFalse(schema.isValid(""));
-        schema.minlength(4);
+        schema.minLength(4);
         assertTrue(schema.isValid("Mother"));
         assertFalse(schema.isValid("Cat"));
         schema.contains("Mo");
@@ -26,7 +26,7 @@ public class StringSchemaTest {
     public void test2() {
         Validator v = new Validator();
         StringSchema schema1 = v.string();
-        schema1.required().contains("Mo").minlength(4);
+        schema1.required().contains("Mo").minLength(4);
         assertTrue(schema1.isValid("Mother"));
     }
 
