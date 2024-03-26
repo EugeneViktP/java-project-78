@@ -48,7 +48,7 @@ schema.isValid("what does the fox say"); // false
 var schema1 = v.string();
 schema1.minLength(10).minLength(4).isValid("Hexlet"); // true
 ```
-##Валидация чисел
+## Валидация чисел
 ```java
 import hexlet.code.Validator;
 import hexlet.code.schemas.NumberSchema;
