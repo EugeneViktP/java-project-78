@@ -14,7 +14,7 @@ var v = new Validator();
 [![Codeclimeate Badge](https://api.codeclimate.com/v1/badges/1b020edefd4cbc4bf1cd/maintainability)](https://codeclimate.com/github/EugeneViktP/java-project-78/maintainability)
 <br>
 [![Test Coverage](https://api.codeclimate.com/v1/badges/1b020edefd4cbc4bf1cd/test_coverage)](https://codeclimate.com/github/EugeneViktP/java-project-78/test_coverage)
-< br>
+
 ```java
 import hexlet.code.Validator;
 import hexlet.code.schemas.StringSchema;
