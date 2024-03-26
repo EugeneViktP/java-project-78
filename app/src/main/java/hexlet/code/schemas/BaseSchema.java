@@ -7,7 +7,7 @@ import java.util.function.Predicate;
 
 public abstract class BaseSchema<T> {
     private final Map<String, Predicate<T>> attributes = new LinkedHashMap<>();
-    public boolean isValid(T obj) {
+    public final boolean isValid(T obj) {
         Collection<Predicate<T>> data = attributes.values();
         if (obj == null && !attributes.containsKey("required")) {
             return true;
@@ -16,7 +16,7 @@ public abstract class BaseSchema<T> {
         }
         return data.stream().allMatch(x -> x.test(obj));
     }
-    public void addCriteria(String name, Predicate<T> criterion) {
+    public final void addCriteria(String name, Predicate<T> criterion) {
 
         attributes.put(name, criterion);
     }
