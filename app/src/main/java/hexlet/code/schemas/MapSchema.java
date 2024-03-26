@@ -2,7 +2,7 @@ package hexlet.code.schemas;
 
 import java.util.Map;
 
-public class MapSchema extends BaseSchema<Map> {
+public final class MapSchema extends BaseSchema<Map> {
     public MapSchema required() {
         addCriteria("required", x -> (x != null));
         return this;
@@ -11,4 +11,5 @@ public class MapSchema extends BaseSchema<Map> {
         addCriteria("sizeof", x -> x.size() == size);
         return this;
     }
+
 }
