@@ -15,6 +15,8 @@ var v = new Validator();
 <br>
 [![Test Coverage](https://api.codeclimate.com/v1/badges/1b020edefd4cbc4bf1cd/test_coverage)](https://codeclimate.com/github/EugeneViktP/java-project-78/test_coverage)
 
+## Валидация строк
+
 ```java
 import hexlet.code.Validator;
 import hexlet.code.schemas.StringSchema;
@@ -77,4 +79,29 @@ schema.isValid(5); // true
 schema.isValid(10); // true
 schema.isValid(4); // false
 schema.isValid(11); // false
+```
+## Валидация объектов типа Map
+```java
+import hexlet.code.Validator;
+import hexlet.code.schemas.MapSchema;
+
+var v = new Validator();
+
+var schema = v.map();
+
+schema.isValid(null); // true
+
+schema.required();
+
+schema.isValid(null); // false
+schema.isValid(new HashMap<>()); // true
+var data = new HashMap<String, String>();
+data.put("key1", "value1");
+schema.isValid(data); // true
+
+schema.sizeof(2);
+
+schema.isValid(data);  // false
+data.put("key2", "value2");
+schema.isValid(data); // true
 ```
