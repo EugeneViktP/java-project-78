@@ -13,4 +13,35 @@ var v = new Validator();
 [![Actions Status](https://github.com/EugeneViktP/java-project-78/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/EugeneViktP/java-project-78/actions) <br>
 [![Codeclimeate Badge](https://api.codeclimate.com/v1/badges/1b020edefd4cbc4bf1cd/maintainability)](https://codeclimate.com/github/EugeneViktP/java-project-78/maintainability)
 <br>
+```java
+import hexlet.code.Validator;
+import hexlet.code.schemas.StringSchema;
+
+var v = new Validator();
+
+var schema = v.string();
+
+// Пока не вызван метод required(), null и пустая строка считаются валидным
+schema.isValid(""); // true
+schema.isValid(null); // true
+
+schema.required();
+
+schema.isValid(null); // false
+schema.isValid(""); // false
+schema.isValid("what does the fox say"); // true
+schema.isValid("hexlet"); // true
+
+schema.contains("wh").isValid("what does the fox say"); // true
+schema.contains("what").isValid("what does the fox say"); // true
+schema.contains("whatthe").isValid("what does the fox say"); // false
+
+schema.isValid("what does the fox say"); // false
+// Здесь уже false, так как добавлена еще одна проверка contains("whatthe")
+
+// Если один валидатор вызывался несколько раз
+// то последний имеет приоритет (перетирает предыдущий)
+var schema1 = v.string();
+schema1.minLength(10).minLength(4).isValid("Hexlet"); // true
+```
 [![Test Coverage](https://api.codeclimate.com/v1/badges/1b020edefd4cbc4bf1cd/test_coverage)](https://codeclimate.com/github/EugeneViktP/java-project-78/test_coverage)
