@@ -8,7 +8,7 @@ import java.util.function.Predicate;
 
 public abstract class BaseSchema<T> {
     private final Map<String, Predicate<T>> attributes = new LinkedHashMap<>();
-    public boolean isRequired;
+    protected boolean isRequired;
 
     public final boolean isValid(T obj) {
         Collection<Predicate<T>> data = attributes.values();
