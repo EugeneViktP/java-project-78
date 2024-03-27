@@ -10,7 +10,7 @@ public class NumberSchemasTest {
     @Test
     public void test1() {
         Validator v = new Validator();
-        NumberSchema schema = v.number();
+        NumberSchema schema = Validator.number();
         assertTrue(schema.isValid(5));
         assertTrue(schema.isValid(null));
         schema.required();
@@ -25,10 +25,11 @@ public class NumberSchemasTest {
         assertTrue(schema.isValid(9));
         assertFalse(schema.isValid(10));
     }
+
     @Test
     public void test2() {
         Validator v = new Validator();
-        NumberSchema schema1 = v.number();
+        NumberSchema schema1 = Validator.number();
         assertTrue(schema1.positive().isValid(null));
     }
 }
